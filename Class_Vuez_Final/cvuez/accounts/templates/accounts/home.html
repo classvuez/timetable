@@ -1,0 +1,46 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+    <style>
+    body {background-color:silver;}
+    a:hover, a:active {
+                      background-color: black;
+                    }
+    </style>
+
+    <h1>Home</h1>
+
+    <h3>Your timetable:</h3>
+
+     <hr/>
+        <table border="1" >
+            <tr>
+
+                <th>Weekday</th>
+                <th>Date</th>
+                <th>Start time</th>
+                <th>End time</th>
+                <th>Class Status</th>
+                <th>Lecturer</th>
+                <th>Subject code</th>
+
+            </tr>
+            {% for getdata in Class%}
+            <tr>
+
+
+                <td>{{getdata.weekday}}</td>
+                <td>{{getdata.date}}</td>
+                <td>{{getdata.start}}</td>
+                <td>{{getdata.end}}</td>
+                <td>{{getdata.class_status}}</td>
+                <td>{{getdata.lecturer_staff_num}}</td>
+                <td>{{getdata.subject_sub_code}}</td>
+
+
+            </tr>
+            {% endfor %}
+        </table>
+
+
+{% endblock %}

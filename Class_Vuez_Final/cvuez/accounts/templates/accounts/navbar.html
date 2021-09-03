@@ -1,0 +1,49 @@
+{% load static %}
+
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img src="{% static 'images/CV Logo.png' %}" width="50" height="50">
+
+  <a class="navbar-brand" href="#">Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'lecturer_details' %}">Lecturer Details</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'student_det' %}">Student Details</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'class' %}">Timetable</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'insert_booking' %}">Book consultation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'consultation_booking' %}">Consultation Booking</a>
+      </li>
+    </ul>
+  </div>
+
+  <span class="hello-msg">Hello, {{request.user}}</span>
+  <span ><a  class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+
+
+</nav>

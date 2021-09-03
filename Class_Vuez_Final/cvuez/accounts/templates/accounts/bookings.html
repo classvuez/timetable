@@ -1,0 +1,67 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Consultation</title>
+            <style>
+            body {background-color: silver;}
+            #ConsultationBtn {
+            height:50px;
+            width:200px;
+            top:750px;
+            }
+            button:hover {box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
+            input[type=text], select,input[type=checkbox] {
+              width: 100%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+            }
+
+                   a:hover, a:active {
+                      background-color: black;
+                    }
+
+
+            </style>
+
+        <body>
+
+
+     <h1>Consultation bookings:</h1>
+     <hr/>
+        <table border="1" >
+            <tr>
+                <th>Consultation ID</th>
+                <th>Weekday</th>
+                <th>Start time</th>
+                <th>End time</th>
+                <th>topic</th>
+                <th>Consultation Status</th>
+            </tr>
+            {% for getdata in Consultation%}
+            <tr>
+
+                <td>{{getdata.consultation_id}}</td>
+                <td>{{getdata.weekday}}</td>
+                <td>{{getdata.start}}</td>
+                <td>{{getdata.end}}</td>
+                <td>{{getdata.topic}}</td>
+                <td>{{getdata.consultation_status}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+
+
+
+        </body>
+</html>
+
+{% endblock %}

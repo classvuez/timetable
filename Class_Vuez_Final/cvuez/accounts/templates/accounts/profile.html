@@ -1,0 +1,54 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+<style>
+  body {background-color: silver;}
+            button:hover {box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
+            input[type=text], select,input[type=checkbox] {
+              width: 100%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+            }
+
+                   a:hover, a:active {
+                      background-color: black;
+                    }
+
+
+</style>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+            <h1>Profile</h1>
+                <div>
+                    <form  method="POST" action="">
+                        {% csrf_token %}
+                        {{form}}
+
+                     <input type="submit" value="Submit profile" >
+
+                      {% if messages %}
+                        {% for message in messages%}
+                        <h2 style="color:green;">{{message}} </h2>
+                        {% endfor %}
+                        {% endif %}
+
+
+
+                 </form>
+                </div>
+           </body>
+</html>
+
+{% endblock %}
